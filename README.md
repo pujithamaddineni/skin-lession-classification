@@ -65,35 +65,33 @@ python -m venv venv
 source venv/bin/activate    # Linux/Mac
 venv\Scripts\activate       # Windows
 
-# Install dependencies
-pip install -r requirements.txt
+## ⚙️ Installation  
 
+```bash
+pip install -r requirements.txt
 🚀 Usage
 🔹 Train the Model
+bash
+Copy code
 python train.py --epochs 20 --batch_size 32 --dataset ./data
-
 🔹 Evaluate the Model
+
+
 python evaluate.py --model checkpoints/best_model.h5 --test_data ./data/test
-
-
-
 ➡ Upload a lesion image → Get prediction (Benign / Malignant)
 
 📊 Results
 Class	Precision	Recall	F1-Score	Support
-'''Benign	0.94	0.88	0.91	4162
-Malignant	0.58	0.76	0.65	905'''
+Benign	0.94	0.88	0.91	4162
+Malignant	0.58	0.76	0.65	905
 
--Accuracy: 0.86
+Accuracy: 0.86
 
--Macro Avg: Precision 0.76 | Recall 0.82 | F1-Score 0.78
+Macro Avg: Precision 0.76 | Recall 0.82 | F1-Score 0.78
 
--Weighted Avg: Precision 0.88 | Recall 0.86 | F1-Score 0.86
-
-
+Weighted Avg: Precision 0.88 | Recall 0.86 | F1-Score 0.86
 
 🔮 Future Improvements
-
 Upgrade to EfficientNetV2 / Vision Transformers (ViT)
 
 Apply Grad-CAM for interpretability
@@ -101,3 +99,5 @@ Apply Grad-CAM for interpretability
 Deploy as web/mobile app for clinicians
 
 Fine-tune with larger, clinical datasets
+
+
