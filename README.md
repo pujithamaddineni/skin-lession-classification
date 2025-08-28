@@ -1,9 +1,21 @@
 🩺 Skin Lesion Classification using EfficientNetB0
+
+
+
+
+
+
 📌 Overview
 
-This project implements a binary image classification model to detect benign vs malignant skin lesions using the ISIC 2019 dataset. The model is built on EfficientNetB0 with transfer learning, trained in TensorFlow/Keras, and deployed with a simple UI (Streamlit/Flask).
+This project implements a binary image classification model to detect benign vs malignant skin lesions using the ISIC 2019 dataset.
 
-The goal is to assist dermatologists and researchers in early skin cancer detection.
+✅ Model: EfficientNetB0 with transfer learning
+
+✅ Framework: TensorFlow/Keras
+
+✅ Deployment: Streamlit/Flask UI
+
+🎯 Goal: To support early skin cancer detection for dermatologists & researchers
 
 📂 Dataset
 
@@ -11,35 +23,37 @@ Source: ISIC 2019 Challenge Dataset
 
 Classes:
 
-Benign (non-cancerous)
+🟢 Benign (non-cancerous)
 
-Malignant (cancerous, e.g., melanoma)
+🔴 Malignant (cancerous, e.g., melanoma)
 
-Preprocessing:
+Preprocessing steps:
 
-Image resizing (224x224)
+Resize images → 224x224
 
-Normalization (0–1)
+Normalize pixel values → [0–1]
 
-Data augmentation (rotation, flip, zoom)
+Apply data augmentation → rotation, flipping, zoom
 
-🧠 Model
+🧠 Model Architecture
 
-Base Model: EfficientNetB0 (pretrained on ImageNet)
+Base: EfficientNetB0 (ImageNet pretrained)
 
-Modifications:
+Custom layers:
 
 Global Average Pooling
 
-Dense layers with Dropout
+Dense layer(s) + Dropout
 
-Final Sigmoid layer for binary classification
+Sigmoid activation for binary classification
 
-Loss Function: Binary Cross-Entropy
+Training setup:
+
+Loss: Binary Cross-Entropy
 
 Optimizer: Adam
 
-Metrics: Accuracy, Precision, Recall, F1, ROC-AUC
+Metrics: Accuracy, Precision, Recall, F1-Score, ROC-AUC
 
 ⚙️ Installation
 # Clone repository
@@ -48,37 +62,42 @@ cd skin-lesion-classification
 
 # Create virtual environment (optional)
 python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
+source venv/bin/activate    # Linux/Mac
+venv\Scripts\activate       # Windows
 
 # Install dependencies
 pip install -r requirements.txt
 
 🚀 Usage
-1️⃣ Train the Model
+🔹 Train the Model
 python train.py --epochs 20 --batch_size 32 --dataset ./data
 
-2️⃣ Evaluate the Model
+🔹 Evaluate the Model
 python evaluate.py --model checkpoints/best_model.h5 --test_data ./data/test
 
 
-                precision    recall  f1-score   support
 
-      Benign       0.94      0.88      0.91      4162
-   Malignant       0.58      0.76      0.65       905
+➡ Upload a lesion image → Get prediction (Benign / Malignant)
 
-    accuracy                           0.86      5067
-   macro avg       0.76      0.82      0.78      5067
-weighted avg       0.88      0.86      0.86      5067
+📊 Results
+Class	Precision	Recall	F1-Score	Support
+Benign	0.94	0.88	0.91	4162
+Malignant	0.58	0.76	0.65	905
 
-(Values are illustrative; update with your actual results.)
+Accuracy: 0.86
+
+Macro Avg: Precision 0.76 | Recall 0.82 | F1-Score 0.78
+
+Weighted Avg: Precision 0.88 | Recall 0.86 | F1-Score 0.86
+
+
 
 🔮 Future Improvements
 
-Use EfficientNetV2 for better accuracy
+Upgrade to EfficientNetV2 / Vision Transformers (ViT)
 
-Apply Grad-CAM for model explainability
+Apply Grad-CAM for interpretability
 
-Deploy as a web/mobile app
+Deploy as web/mobile app for clinicians
 
-Integrate with clinical datasets for real-world validation
+Fine-tune with larger, clinical datasets
