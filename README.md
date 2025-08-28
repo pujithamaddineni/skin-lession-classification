@@ -61,11 +61,6 @@ python train.py --epochs 20 --batch_size 32 --dataset ./data
 2️⃣ Evaluate the Model
 python evaluate.py --model checkpoints/best_model.h5 --test_data ./data/test
 
-3️⃣ Run Streamlit App
-streamlit run app.py
-
-
-Upload a skin lesion image → Get prediction (Benign / Malignant).
 
                 precision    recall  f1-score   support
 
