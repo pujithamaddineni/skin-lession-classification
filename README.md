@@ -1,4 +1,4 @@
-🩺 Skin Lesion Classification using EfficientNetB0
+#**🩺 Skin Lesion Classification using EfficientNetB0**
 
 
 
@@ -81,14 +81,14 @@ python evaluate.py --model checkpoints/best_model.h5 --test_data ./data/test
 
 📊 Results
 Class	Precision	Recall	F1-Score	Support
-Benign	0.94	0.88	0.91	4162
-Malignant	0.58	0.76	0.65	905
+'''Benign	0.94	0.88	0.91	4162
+Malignant	0.58	0.76	0.65	905'''
 
-Accuracy: 0.86
+-Accuracy: 0.86
 
-Macro Avg: Precision 0.76 | Recall 0.82 | F1-Score 0.78
+-Macro Avg: Precision 0.76 | Recall 0.82 | F1-Score 0.78
 
-Weighted Avg: Precision 0.88 | Recall 0.86 | F1-Score 0.86
+-Weighted Avg: Precision 0.88 | Recall 0.86 | F1-Score 0.86
 
 
 
